@@ -1,0 +1,372 @@
+/* RESET BÁSICO Y CONFIGURACIÓN GENERAL */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
+    color: white; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.color-acento { color: #00FFFF; } /* Color de acento dorado */
+
+/* --- HEADER (Barra Fija Superior) --- */
+header {
+    background-color: rgb(10, 10, 10);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.logo { 
+    font-weight: bold;
+    font-size: 24px;
+    color: var(--color-acento, #00FFFF);
+    text-decoration: none;
+}
+
+header nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    padding: 10px 15px;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: var(--color-acento, #00FFFF);
+}
+
+/* --- SECCIÓN HERO (Fondo Cyberpunk y Texto Centrado) --- */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 95vh; 
+    padding-top: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1; 
+    opacity: 0.5;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 30px 60px; 
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 0, 0.4); 
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.8); 
+}
+
+#hero h1 {
+    font-size: 4em;
+    margin-bottom: 50px; /* Aumento del margen para separar el texto del botón */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.9); 
+}
+
+/* --- BOTONES --- */
+.button-principal {
+    font-weight: bold;
+    font-size: 1.25em;
+    padding: 15px 40px; /* Tamaño más robusto para el botón */
+    border-radius: 5px;
+    color: black;
+    background-color: var(--color-acento, #FF00FF);
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.button-principal:hover {
+    background-color: white;
+    color: black;
+}
+
+.button-secundario {
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    letter-spacing: 1.5px; /* Separación de letras para estilizado */
+}
+
+.button-secundario:hover {
+    background-color: var(--color-acento, #FF00FF);
+    border-color: var(--color-acento, #FF00FF);
+}
+
+/* --- SECCIONES BASE --- */
+section {
+    padding: 100px 0;
+    text-align: center;
+    scroll-margin-top: 60px;
+}
+
+/* --- SECCIÓN ACERCA DE MÍ --- */
+#about {
+    background-color: #151515;
+}
+
+#about .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 50px 0;
+}
+
+#about .img-container {
+    background-color: #333; 
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; /* Forma de círculo */
+    flex-shrink: 0;
+    margin-right: 50px;
+    border: 3px solid var(--color-acento, #00FF00); /* Borde de acento */
+    overflow: hidden; /* **CLAVE:** Oculta la parte sobrante de la imagen */
+    box-shadow: 0 0 20px var(--color-neon-shadow, rgba(0, 255, 0, 0.8));
+}
+
+#about .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* **CLAVE:** Asegura que la imagen cubra todo el contenedor */
+    border-radius: 50%; /* Mantiene la forma circular */
+}
+
+#about .texto h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* --- SECCIÓN PORTAFOLIO (PROYECTOS) --- */
+#portfolio {
+    background-color: black;
+}
+
+#portfolio h2 {
+    font-size: 3em;
+    margin-bottom: 40px;
+}
+
+#portfolio .cartas {
+    /* CLAVE: Distribución y centrado del BLOQUE completo */
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; /* Centra las cartas en la fila (incluyendo la última) */
+    gap: 25px; 
+    
+    /* Centra el bloque total de cartas en la página para que la última fila se vea bien */
+    max-width: 1000px; 
+    margin: 40px auto; 
+}
+
+#portfolio .carta {
+    background-color: #1a1a1a;
+    padding: 30px 20px; 
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.6);
+    height: 310px;
+    width: 310px; 
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    /* PROPIEDAD CLAVE para el fondo de la imagen */
+    background-size: cover;
+    background-position: center center;
+    
+    /* Agrega un gradiente oscuro base para asegurar que el texto blanco sea legible */
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.75), /* Capa oscura más fuerte */
+        rgba(0, 0, 0, 0.75)
+    );   
+    
+    /* Estructura interna para centrar contenido */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+/* --- ESTILOS INDIVIDUALES DE LAS CARTAS (Utiliza estos selectores) --- */
+
+#portfolio .cartas .carta:nth-child(1) { 
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/excel-automation.jpg'); 
+}
+
+#portfolio .cartas .carta:nth-child(2) { 
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/web-scraper.jpg');
+}
+
+#portfolio .cartas .carta:nth-child(3) { 
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/email-sender.jpg');
+}
+
+#portfolio .cartas .carta:nth-child(4) { 
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/csv-merger.jpg');
+}
+
+#portfolio .cartas .carta:nth-child(5) { 
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/api-extractor.jpg');
+}
+
+#portfolio .cartas .carta:nth-child(6) { 
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/space-invaders.jpg');
+}
+
+/* --- EFECTO HOVER (Opcional, pero genial para UX) --- */
+/* Haz que la imagen se aclare ligeramente al pasar el mouse para revelar más el diseño */
+#portfolio .carta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px var(--color-neon-shadow, rgba(0, 255, 0, 0.4));
+    /* Aclara la capa oscura para que la imagen se vea más brillante */
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/default-project.jpg'); 
+}
+
+#portfolio .carta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 255, 0, 0.4);
+}
+
+#portfolio .carta h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: var(--color-acento, #00FFFF);
+}
+
+/* --- SECCIÓN SERVICIOS --- */
+#services {
+    background-color: #151515;
+}
+
+#services h2 {
+    font-size: 3em;
+    margin-bottom: 40px;
+}
+
+#services ul {
+    list-style: none;
+    padding: 0;
+    max-width: 700px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+#services li {
+    background-color: #2a2a2a;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 5px solid var(--color-acento, #00FF00);
+    border-radius: 5px;
+}
+
+/* --- SECCIÓN CONTACTO --- */
+#contact {
+    padding: 80px 0;
+    background-color: black;
+}
+
+#contact h2 {
+    font-size: 3em;
+    margin-bottom: 30px;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: rgb(10, 10, 10);
+    padding: 20px 0;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .redes {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+footer .redes li {
+    margin-left: 20px;
+}
+
+footer .redes a {
+    color: white;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+footer .redes a:hover {
+    color: var(--color-acento, #00FF00);
+}
+
+/* --- MEDIA QUERIES (RESPONSIVE DESIGN) --- */
+@media (max-width: 900px) {
+    #hero h1 {
+        font-size: 2.5em;
+    }
+    
+    #acerca-de-mi .container,
+    footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #acerca-de-mi .img-container {
+        margin: 20px auto;
+    }
+    
+    #acerca-de-mi .texto {
+        padding: 0;
+    }
+
+    #portfolio .cartas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .redes {
+        margin-top: 15px;
+    }
+}
