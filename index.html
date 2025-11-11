@@ -3,16 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vshade | Programing</title> 
+    <title>Vshade | Programación</title>
+    <meta name="description" content="Vshade - Desarrollador Python especializado en automatización, scraping y soluciones a medida.">
+    <meta name="theme-color" content="#000000">
 
-    <link rel="icon" type="image/png" sizes="32x32" href="web-app-manifest-512x512.png">
-    
-    <link rel="stylesheet" href="style.css"> 
+    <!-- Open Graph básico -->
+    <meta property="og:title" content="Vshade | Programación">
+    <meta property="og:description" content="Desarrollador Python - Automatización, Web Scraping, Email Automation y más.">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon y manifest (asegúrate de tener los archivos en `images/`) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="manifest" href="images/site.webmanifest">
+
+    <!-- Tipografía -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
     
     <script src="https://kit.fontawesome.com/79fc5d33d6.js" crossorigin="anonymous"></script>
 </head>
-<body>  
-    
+<body>
+    <a class="skip-link" href="#hero">Saltar al contenido</a>
+
     <header>
         <div class="container">
             <a href="#" class="logo">Vshade</a> 
@@ -26,7 +39,7 @@
     </header>
 
     <section id="hero">
-        <img src="images/back.v2.png" alt="Vshade Programing Logo" class="hero-background-img"> 
+        <img src="images/back.v2.png" alt="Vshade Programing Logo" class="hero-background-img" loading="lazy"> 
         
         <div class="hero-content">
             <h1>
@@ -41,7 +54,7 @@
     <section id="about">
         <div class="container">
             <div class="img-container">
-                <img src="images/back.v2.png" alt="Foto de Vshade - Desarrollador">
+                <img src="images/back.v2.png" alt="Foto de Vshade - Desarrollador" loading="lazy">
                 </div>
             <div class="texto">
                 <h2>Soy <span class="color-acento">VSHADE</span>: Desarrollador Integral</h2>
@@ -103,6 +116,12 @@
                     <p>Demostración de diseño web responsivo y desarrollo Frontend (HTML/CSS) para marca personal.</p>
                     <a href="https://github.com/Vshade-x/vshade_page" class="button-secundario">Ver Código</a>
                 </div>
+                <div class="carta">
+                    <h3>Restaurant POS System (Tkinter)</h3>
+                    <p>Sistema de facturación de restaurante completo con GUI, lógica de negocio avanzada y manejo de errores de entrada.</p>
+                    <a href="https://github.com/Vshade-x/python_restaurant_pos_gui" class="button-secundario">Ver Código</a>
+                </div>
+
                 </div>
         </div>
     </section>
@@ -128,9 +147,9 @@
         <div class="container">
             <p>&copy; VSHADE | Desarrollador Versátil</p>
             <ul class="redes">
-                <li><a href="https://www.linkedin.com/in/johan-mendez-58a73b395/" class="linkedin"><i class="fab fa-linkedin"></i></a></li>
-                <li><a href="https://github.com/Vshade-x" class="github"><i class="fab fa-github"></i></a></li>
-                <li><a href="https://www.upwork.com/freelancers/~01f02100b2cc31dcbb?viewMode=1" class="freelance"><i class="fas fa-briefcase"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/johan-mendez-58a73b395/" class="linkedin" aria-label="LinkedIn de Vshade"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/Vshade-x" class="github" aria-label="GitHub de Vshade"><i class="fab fa-github"></i></a></li>
+                <li><a href="https://www.upwork.com/freelancers/~01f02100b2cc31dcbb?viewMode=1" class="freelance" aria-label="Perfil freelance de Vshade"><i class="fas fa-briefcase"></i></a></li>
             </ul>
         </div>
     </footer>
